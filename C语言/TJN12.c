@@ -443,53 +443,250 @@
 //}
 
 
+//#include <stdio.h>
+//#include<stdlib.h>
+//int main()
+//{
+//    int n, m;
+//    scanf("%d %d", &n, &m);
+//    int** arr1 = (int**)malloc(n * sizeof(int*));
+//    for (int a = 0; a < n; a++)
+//    {
+//        arr1[a] = (int*)malloc(m * sizeof(int));
+//    }
+//    int** arr2 = (int**)malloc(n * sizeof(int*));
+//    for (int a = 0; a < n; a++)
+//    {
+//        arr2[a] = (int*)malloc(m * sizeof(int));
+//    }
+//    for (int b = 0; b < n; b++)
+//    {
+//        for (int c = 0; c < m; c++)
+//        {
+//            scanf("%d", &arr1[b][c]);
+//        }
+//    }
+//    for (int b = 0; b < n; b++)
+//    {
+//        for (int c = 0; c < m; c++)
+//        {
+//            scanf("%d", &arr2[b][c]);
+//        }
+//    }
+//    int count = 0;
+//    for (int f = 0; f < n; f++)
+//    {
+//        for (int g = 0; g < m; g++)
+//        {
+//            if (arr1[f][g] == arr2[f][g])count++;
+//        }
+//    }
+//    if(count==m*n)printf("Yes\n");
+//            else
+//                printf("No\n");
+//    for (int h = 0; h < n; h++)
+//    {
+//        free(arr1[h]);
+//        free(arr2[h]);
+//    }
+//    free(arr1);
+//    free(arr2);
+//    return 0;
+//}
+
+
+//#include <stdio.h>
+//int array[1001][1001] = { 0 };
+//int main(void)
+//{
+//    int n = 0;
+//    scanf("%d", &n);
+//    int i = 1, j = 1, k = 0, pos = 1; //pos代表方向移动   1代表右上   -1代表左下
+//    array[i][j] = 1;
+//    for (k = 2; k <= n * n; k++)
+//    {
+//        if (i == 1 && j < n && pos == 1) //碰到上边界,列增加1,行不变     此后行增,列减
+//        {
+//            array[i][++j] = k;
+//            pos = -1;                 //方向注意
+//        }
+//        else if (j == 1 && i < n && pos == -1)//碰到左边界,行增加1,列不变     此后行减,列增
+//        {
+//            array[++i][j] = k;
+//            pos = 1;                     //方向注意               
+//        }
+//        else if (j == n && pos == 1) //碰到左边界,行增加1,列不变     此后行增,列减
+//        {
+//            array[++i][j] = k;
+//            pos = -1;                     //方向注意
+//        }
+//        else if (i == n && pos == -1) //碰到右边界,列增加1,行不变    此后行减,列增
+//        {
+//            array[i][++j] = k;
+//            pos = 1;
+//        }
+//        else if (pos == 1)         //除去上面的边界情况,就是中间移动过程
+//        {
+//            array[--i][++j] = k;
+//        }
+//        else if (pos == -1)
+//        {
+//            array[++i][--j] = k;
+//        }
+//    }
+//    for (i = 1; i <= n; i++)
+//    {
+//        for (j = 1; j <= n; j++)
+//            printf("%d ", array[i][j]);
+//        printf("\n");
+//    }
+//    return 0;
+//}
+
+
+//#include <stdio.h>
+//#include<stdlib.h>
+//int main()
+//{
+//    int n, m;
+//    scanf("%d %d", &n, &m);
+//    int* arr1 = (int*)malloc(m * n * sizeof(int));
+//    for (int a = 0; a < n * m; a++)
+//    {
+//        scanf("%d", &arr1[a]);
+//    }
+//    int** arr2 = (int**)malloc(n * sizeof(int*));
+//    for (int a = 0; a < n; a++)
+//    {
+//        arr2[a] = (int*)malloc(m * sizeof(int));
+//    }int c, d;
+//    for (int b = 0; b < n * m; b++)
+//    {
+//        c = b / m;
+//        d = b % m;
+//        arr2[c][d] = arr1[b];
+//    }
+//    for (int e = 0; e < n; e++)
+//    {
+//        for (int f = 0; f < m; f++)
+//        {
+//            printf("%d ", arr2[e][f]);
+//        }
+//        printf("\n");
+//    }
+//    for (int a = 0; a < n; a++)
+//    {
+//        free(arr2[a]);
+//    }
+//    free(arr1);
+//    free(arr2);
+//    return 0;
+//}
+
+
+
+
+
+//#include <stdio.h>
+//#include<stdlib.h>
+//
+//void hanshu1(int a, int b,int n,int m,int**arr)
+//{
+//    int* arr1 = (int*)malloc(m * sizeof(int));
+//    for (int c = 0; c < m; c++)
+//    {
+//        arr1[c] = arr[a][c];
+//    }
+//    for (int c = 0; c < m; c++)
+//    {
+//        arr[a][c] = arr[b][c];
+//        arr[b][c] = arr1[c];
+//    }
+//    free(arr1);
+//}
+//
+//void hanshu2(int a, int b, int n, int m, int** arr)
+//{
+//    int* arr1 = (int*)malloc(n * sizeof(int));
+//    for (int c = 0; c < n; c++)
+//    {
+//        arr1[c] = arr[c][a];
+//    }
+//    for (int c = 0; c < n; c++)
+//    {
+//        arr[c][a] = arr[c][b];
+//        arr[c][b] = arr1[c];
+//    }
+//    free(arr1);
+//}
+//
+//int main()
+//{
+//    int m, n,e,f,  k;
+//    char ar;
+//    scanf("%d %d", &n, &m);
+//    int** arr = (int**)malloc(n * sizeof(int*));
+//    for (int a = 0; a < n; a++)
+//    {
+//        arr[a] = (int*)malloc(m * sizeof(int));
+//    }
+//    for (int b = 0; b < n; b++)
+//    {
+//        for (int c = 0; c < m; c++)
+//        {
+//            scanf("%d", &arr[b][c]);
+//        }
+//    }
+//    scanf("%d", &k);
+//    getchar();
+//    for (int i = 0; i < k; i++)
+//    {
+//        scanf(" %c %d %d", &ar, &e, &f);
+//        if (ar == 'r') hanshu1(e, f,n,m,arr);
+//        if (ar == 'c') hanshu2(e, f,n,m,arr);
+//   }
+//    for (int a = 0; a < n; a++)
+//    {
+//        for (int b = 0; b < m; b++)
+//        {
+//            printf("%d ", arr[a][b]);
+//        }
+//        printf("\n");
+//    }
+//    for (int a = 0; a < n; a++)
+//    {
+//        free(arr[a]);
+//    }
+//    free(arr);
+//    return 0;
+//}
+//
+
+
+
 #include <stdio.h>
-#include<stdlib.h>
+
 int main()
 {
-    int n, m;
-    scanf("%d %d", &n, &m);
-    int** arr1 = (int**)malloc(n * sizeof(int*));
+    int n;
+    scanf("%d", &n);
+    int** arr = (int**)malloc(n * sizeof(int*));
     for (int a = 0; a < n; a++)
     {
-        arr1[a] = (int*)malloc(m * sizeof(int));
+        arr[a] = (int*)malloc(sizeof(int));
     }
-    int** arr2 = (int**)malloc(n * sizeof(int*));
     for (int a = 0; a < n; a++)
     {
-        arr2[a] = (int*)malloc(m * sizeof(int));
-    }
-    for (int b = 0; b < n; b++)
-    {
-        for (int c = 0; c < m; c++)
+        for (int b = 0; b < n; b++)
         {
-            scanf("%d", &arr1[b][c]);
+            if (b == 0 || a == b)
+            {
+                arr[a][b] = 1;
+            }
+            else arr[a][b] = arr[a - 1][b - 1] + arr[a - 1][b];
+            printf("%5d", arr[a][b]);
         }
+        printf("\n");
     }
-    for (int b = 0; b < n; b++)
-    {
-        for (int c = 0; c < m; c++)
-        {
-            scanf("%d", &arr2[b][c]);
-        }
-    }
-    int count = 0;
-    for (int f = 0; f < n; f++)
-    {
-        for (int g = 0; g < m; g++)
-        {
-            if (arr1[f][g] == arr2[f][g])count++;
-        }
-    }
-    if(count==m*n)printf("Yes\n");
-            else
-                printf("No\n");
-    for (int h = 0; h < n; h++)
-    {
-        free(arr1[h]);
-        free(arr2[h]);
-    }
-    free(arr1);
-    free(arr2);
     return 0;
 }
